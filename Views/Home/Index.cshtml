@@ -1,0 +1,43 @@
+﻿@model IEnumerable<WebApplication3.Models.Book>
+@{
+   // ViewData["Title"] = "Home Page";
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/main.css" />
+</head>
+<body>
+    <h1>Магазин книг</h1>
+        <table border="1">
+             <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Price</th>
+             </tr>
+
+             @foreach (var book in Model)
+              {
+        <tr>
+                <td>@book.Name</td>
+                <td>@book.Author</td>
+                <td>@book.Price</td>
+                <td><a href="~/Home/Buy/@book.Id">Купить</a></td>
+
+        </tr>
+              }
+       </table>
+        
+    <div>
+        <footer>
+            <center>
+                <p style="font-size:10px">Lab work</p>
+            </center>
+        </footer>
+        
+    </div>
+</body>
+
+</html>
